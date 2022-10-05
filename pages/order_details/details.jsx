@@ -27,7 +27,7 @@ const Details = ({ oid, id, time, name, email, phone, address, cart }) => {
             <div className={styles.item}>Phone: {phone}</div>
             <div className={styles.item}>Address: {address}</div>
             <div className={styles.cart}>
-                {Object.keys(cart).map((k) => <CartItem image={cart[k].image} title={cart[k].title} quantity={cart[k].quantity} price={cart[k].price} updateTotal={updateTotal}/>)}
+                {Object.keys(cart).map((k, index) => <CartItem key={index} image={cart[k].image} title={cart[k].title} quantity={cart[k].quantity} price={cart[k].price} updateTotal={updateTotal}/>)}
             </div>
             <div className={styles.btn}>Total: ${total}</div>
             <br></br>

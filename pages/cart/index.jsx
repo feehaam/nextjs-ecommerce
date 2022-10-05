@@ -37,7 +37,7 @@ export default function Cart({ addProduct, removeProduct }) {
         </div>
         <div className={styles.items}>
           {
-            Object.keys(cart).map((k) => <Item image={cart[k].image} title={cart[k].title} price={cart[k].price} quantity={cart[k].quantity} add={addProduct} remove={removeProduct} product={cart[k]} id={k} setCart={setCart} />)
+            Object.keys(cart).map((k, index) => <Item key={index} image={cart[k].image} title={cart[k].title} price={cart[k].price} quantity={cart[k].quantity} add={addProduct} remove={removeProduct} product={cart[k]} id={k} setCart={setCart} />)
           }
           {
             Object.keys(cart).map((k) => {

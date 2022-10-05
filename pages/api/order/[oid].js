@@ -1,12 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-export default (req, res) => {
-    console.log(req.query);
+// export default (req, res) => {
+//     console.log(req.query);
 
-    let id = req.query.oid;
-    console.log(id);
+//     let id = req.query.oid;
+//     console.log(id);
 
     
 
-    res.send("done");
-}
+//     res.send("done");
+// }

@@ -23,7 +23,8 @@ const OrderDetails = (cart) => {
         <div>
             {console.log(id)}
             {
-                Object.keys(orders).map((k) => <Details 
+                Object.keys(orders).map((k, index) => <Details 
+                    key={index}
                     oid={id}
                     id={k}
                     time={orders[k].info[0]}

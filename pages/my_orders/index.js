@@ -37,7 +37,7 @@ const MyOrders = () => {
                 </div> : null
             }
             {
-                Object.keys(orders).map((k) => <OrderItem id={k} time={orders[k].info[0]} cart={orders[k].info[1]} />)
+                Object.keys(orders).map((k, index) => <OrderItem key={index} id={k} time={orders[k].info[0]} cart={orders[k].info[1]} />)
             }
         </div>
     )
