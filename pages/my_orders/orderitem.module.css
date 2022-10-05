@@ -1,0 +1,15 @@
+.container{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 5px 1px #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #333333;
+    border-radius: 10px;
+}
+
+.container:hover{
+    cursor: pointer;
+    background-color: #555555;
+    color: white;
+}
