@@ -1,15 +1,15 @@
 import styles from "./product_details.module.css"
+import Image from "next/image";
 
 const ProductDetails = ({product, addToCart}) => {
 
-    let id = product.id;
-    let title = product.title;
-    let price = product.price;
-    let description = product.description;
-    let category = product.category;
-    let image = product.image;
-    let rating = product.rating.rate;
-    let rated = product.rating.count;
+    let title = product?.title;
+    let price = product?.price;
+    let description = product?.description;
+    let category = product?.category;
+    let image = product?.image;
+    let rating = product?.rating.rate;
+    let rated = product?.rating.count;
 
     return (
         <div>
@@ -19,7 +19,7 @@ const ProductDetails = ({product, addToCart}) => {
                         {title}
                     </div>
                     <div className={styles.image}>
-                        <img src={image} className={styles.imgfix}></img>
+                        <Image src={image} className={styles.imgfix}></Image>
                     </div>
                     <div className={styles.details}>
                         {description}

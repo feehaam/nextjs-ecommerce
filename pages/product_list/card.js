@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal/Modal";
 import styles from "../product_list/card.module.css";
+import Image from "next/image";
 
 const Card = ({ product, addToCart, openProductDetails }) => {
 
@@ -40,7 +41,7 @@ const Card = ({ product, addToCart, openProductDetails }) => {
                             Price
                         </div>
                         <div className={styles.right}>
-                            {price}
+                            $ {price}
                         </div>
                     </div>
                     <div className={styles.tag}>

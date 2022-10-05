@@ -177,8 +177,7 @@ export default function Home() {
       {
         currentPage.endsWith("ProductDetails") ? <ProductDetails product={product} addToCart={addToCart}/> : null
       }
-
-
+      
     </div>
   )
 }

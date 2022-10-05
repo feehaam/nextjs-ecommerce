@@ -3,14 +3,13 @@ import styles from "./Modal.module.css"
 
 function Modal({ open, product, addToCart, onClose }) {
 
-    let id = product.id;
-    let title = product.title;
-    let price = product.price;
-    let description = product.description;
-    let category = product.category;
-    let image = product.image;
-    let rating = product.rating.rate;
-    let rated = product.rating.count;
+    let titleI = product?.title;
+    let price = product?.price;
+    let description = product?.description;
+    let category = product?.category;
+    let image = product?.image;
+    let rating = product?.rating.rate;
+    let rated = product?.rating.count;
 
     if (!open) return null;
 
@@ -20,7 +19,7 @@ function Modal({ open, product, addToCart, onClose }) {
                 <div className={styles.modalContent}>
                     <span onClick={onClose} className={styles.modalClose}>&times;</span>
                     <div className={styles.title}>
-                        {title}
+                        {titleI}
                     </div>
                     <div className={styles.image}>
                         <img src={image} className={styles.imgfix}></img>
@@ -33,7 +32,7 @@ function Modal({ open, product, addToCart, onClose }) {
                             <tr>
                                 <td>
                                     <div className={styles.option}>
-                                        Price: {price}
+                                        Price: $ {price}
                                     </div>
                                     <div className={styles.option}>
                                         Rating: {rating}({rated})

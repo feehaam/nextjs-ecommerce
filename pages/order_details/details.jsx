@@ -10,7 +10,7 @@ const Details = ({ oid, id, time, name, email, phone, address, cart }) => {
 
     let T = 0;
 
-    function updateTotal(p){
+    const updateTotal = (p) => {
         T += p;
         console.log(T);
         setTotal(T/2);
