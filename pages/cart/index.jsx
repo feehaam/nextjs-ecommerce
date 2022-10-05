@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../cart/cart.module.css";
 import Item from "./items";
 import Checkout from "../checkout";
+import Link from 'next/link'
 
 export default function Cart({ addProduct, removeProduct }) {
 
@@ -21,7 +22,7 @@ export default function Cart({ addProduct, removeProduct }) {
   }, [])
 
   const clearLocalStorage = () => {
-    localStorage.clear();
+    localStorage.setItem("cart", "");
     localStorage.setItem("totalItems", 0);
     localStorage.setItem("totalPrice", 0);
     window.location.reload();
@@ -48,10 +49,13 @@ export default function Cart({ addProduct, removeProduct }) {
             totalItemsInCart == 0 ? <div>There is no item in cart!<br></br>Go back to products list and add some product.</div> : ""
           }
         </div>
-        <a href="../checkout" className={styles.order} >
-          Checkout
-        </a>
-        <div className={styles.clear} onClick={()=>{clearLocalStorage()}}>
+          {
+            totalItemsInCart != 0 ? <Link href="../checkout">
+            <a  className={styles.order}>Checkout</a>
+          </Link> : null
+          }
+        
+        <div className={styles.clear} onClick={() => { clearLocalStorage() }}>
           Clear Cart
         </div>
       </div>
